@@ -1,0 +1,35 @@
+<html>
+	<body bgcolor=#d4a3ae>
+		<center>
+
+			<h1> Happy or Sad Detection with Deep Learning </h1><br>
+			<p>Computers can learn to detect emotions from images.
+			Try uploading an image to see if the algorithm thinks it's happy or sad.
+			It works using a special neural network called a Convolutional Neural Network. </p><br><br><br>
+			
+			
+			
+			{% with messages = get_flashed_messages() %}
+   				{% if messages %}
+      				{% for message in messages %}
+         				{{ message }}
+      				{% endfor %}
+   				{% endif %}
+			{% endwith %}
+
+			<br>
+
+			<form method="POST" action="{{url_for('home')}}" enctype=multipart/form-data>
+		  <input type=file name=file>
+		    <input type=submit value=predict>
+		    </form>
+
+
+		</center>
+
+	</body>
+
+</html>
+
+
+					
